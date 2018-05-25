@@ -17,14 +17,23 @@ public class ReplaceAllDcrGoDeps {
 	public static void main (final String[] args) throws IOException {
 		ScarabeiDesktop.deploy();
 
-		final String token = "github.com/decred/";
-		final String replacement = "github.com/picfight/";
+// final String token = "github.com/decred/";
+		final String token = "dcrd";
+		final String replacement = "pfcd";
 
-		final String targetPath = "D:\\PICFIGHT\\src\\github.com\\picfight\\pfcd";
+		final String targetPath = "D:\\PICFIGHT\\src\\github.com\\picfight\\pfc_explorer";
 		final LocalFile target = LocalFileSystem.newFile(targetPath);
+// target.li
 		final FilesList goFiles = target.listAllChildren(file -> {
 			try {
-				return (file.extensionIs("go") || file.extensionIs("md")) && file.readToString().contains(token);
+				return (file.extensionIs("go")//
+					|| file.extensionIs("md")//
+					|| file.extensionIs("conf")//
+					|| file.extensionIs("conf")//
+					|| file.extensionIs("xml")//
+					|| file.extensionIs("sh")//
+					|| file.extensionIs("service")//
+				) && file.readToString().contains(token);
 			} catch (final IOException e) {
 				e.printStackTrace();
 				return false;
