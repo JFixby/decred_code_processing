@@ -8,12 +8,28 @@ public class RegextpTest {
 
 	public static void main (final String[] args) {
 		ScarabeiDesktop.deploy();
+		{
+			final String input = "decred/$DOCKER_IMAGE_TAG";
 
-		final String input = "decred/$DOCKER_IMAGE_TAG";
+			final String res = input.replaceAll("\\$D", "\\$X");
 
-		final String res = input.replaceAll("\\$D", "\\$X");
+			L.d(res);
+		}
+		{
+			final String input = "123|456";
 
-		L.d(res);
+			final String res = input.replaceAll("\\|4", "\\|X");
+
+			L.d(res);
+		}
+
+		{
+			final String input = "-\"123456\"-";
+
+			final String res = input.replaceAll("\"123456\"", "\"xxxxxxx\"");
+
+			L.d(res);
+		}
 	}
 
 }

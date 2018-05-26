@@ -124,6 +124,36 @@ public class PFCD_builder {
 
 		data = data.replaceAll("dcrPK", "pfcPK");
 
+		data = data.replaceAll(PARAMS.DCR_P2P_MAINNET_PORT + ":", PARAMS.PFC_P2P_MAINNET_PORT + ":");
+		data = data.replaceAll(PARAMS.DCR_P2P_TESTNET_PORT + ":", PARAMS.PFC_P2P_TESTNET_PORT + ":");
+		data = data.replaceAll(PARAMS.DCR_RPC_MAINNET_PORT + ":", PARAMS.PFC_RPC_MAINNET_PORT + ":");
+		data = data.replaceAll(PARAMS.DCR_RPC_TESTNET_PORT + ":", PARAMS.PFC_RPC_TESTNET_PORT + ":");
+
+		data = data.replaceAll(PARAMS.DCR_P2P_MAINNET_PORT + "\\|", PARAMS.PFC_P2P_MAINNET_PORT + "\\|");
+		data = data.replaceAll(PARAMS.DCR_P2P_TESTNET_PORT + "\\|", PARAMS.PFC_P2P_TESTNET_PORT + "\\|");
+		data = data.replaceAll(PARAMS.DCR_RPC_MAINNET_PORT + "\\|", PARAMS.PFC_RPC_MAINNET_PORT + "\\|");
+		data = data.replaceAll(PARAMS.DCR_RPC_TESTNET_PORT + "\\|", PARAMS.PFC_RPC_TESTNET_PORT + "\\|");
+
+		data = data.replaceAll(":" + PARAMS.DCR_P2P_MAINNET_PORT, ":" + PARAMS.PFC_P2P_MAINNET_PORT + "");
+		data = data.replaceAll(":" + PARAMS.DCR_P2P_TESTNET_PORT + "", ":" + PARAMS.PFC_P2P_TESTNET_PORT + "");
+		data = data.replaceAll(":" + PARAMS.DCR_RPC_MAINNET_PORT + "", ":" + PARAMS.PFC_RPC_MAINNET_PORT + "");
+		data = data.replaceAll(":" + PARAMS.DCR_RPC_TESTNET_PORT + "", ":" + PARAMS.PFC_RPC_TESTNET_PORT + "");
+
+		data = data.replaceAll(": " + PARAMS.DCR_P2P_MAINNET_PORT, ": " + PARAMS.PFC_P2P_MAINNET_PORT + "");
+		data = data.replaceAll(": " + PARAMS.DCR_P2P_TESTNET_PORT + "", ": " + PARAMS.PFC_P2P_TESTNET_PORT + "");
+		data = data.replaceAll(": " + PARAMS.DCR_RPC_MAINNET_PORT + "", ": " + PARAMS.PFC_RPC_MAINNET_PORT + "");
+		data = data.replaceAll(": " + PARAMS.DCR_RPC_TESTNET_PORT + "", ": " + PARAMS.PFC_RPC_TESTNET_PORT + "");
+
+		data = data.replaceAll(" " + PARAMS.DCR_P2P_MAINNET_PORT + " ", " " + PARAMS.PFC_P2P_MAINNET_PORT + " ");
+		data = data.replaceAll(" " + PARAMS.DCR_P2P_TESTNET_PORT + " ", " " + PARAMS.PFC_P2P_TESTNET_PORT + " ");
+		data = data.replaceAll(" " + PARAMS.DCR_RPC_MAINNET_PORT + " ", " " + PARAMS.PFC_RPC_MAINNET_PORT + " ");
+		data = data.replaceAll(" " + PARAMS.DCR_RPC_TESTNET_PORT + " ", " " + PARAMS.PFC_RPC_TESTNET_PORT + " ");
+
+		data = data.replaceAll("\"" + PARAMS.DCR_P2P_MAINNET_PORT + "\"", "\"" + PARAMS.PFC_P2P_MAINNET_PORT + "\"");
+		data = data.replaceAll("\"" + PARAMS.DCR_P2P_TESTNET_PORT + "\"", "\"" + PARAMS.PFC_P2P_TESTNET_PORT + "\"");
+		data = data.replaceAll("\"" + PARAMS.DCR_RPC_MAINNET_PORT + "\"", "\"" + PARAMS.PFC_RPC_MAINNET_PORT + "\"");
+		data = data.replaceAll("\"" + PARAMS.DCR_RPC_TESTNET_PORT + "\"", "\"" + PARAMS.PFC_RPC_TESTNET_PORT + "\"");
+
 		data = data.replaceAll("dcrchain", "pfcchain");
 
 		data = data.replaceAll("dcr work", "pfc work");
