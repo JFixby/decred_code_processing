@@ -30,6 +30,14 @@ public class RegextpTest {
 
 			L.d(res);
 		}
+
+		{
+			final String input = "CoinsUnspent float64 `json:\\\"dcr_unspent\\\"`";
+
+			final String res = input.replaceAll("\"123456\"", "\"xxxxxxx\"");
+
+			L.d(res);
+		}
 	}
 
 }

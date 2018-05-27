@@ -14,7 +14,7 @@ import com.jfixby.scarabei.api.util.Utils;
 import com.jfixby.scarabei.api.util.path.RelativePath;
 import com.jfixby.scarabei.red.desktop.ScarabeiDesktop;
 
-public class PFCD_builder {
+public class PFCData_builder {
 
 	public static void main (final String[] args) throws IOException {
 
@@ -23,10 +23,10 @@ public class PFCD_builder {
 		final String goWorkspacePath = "D:\\PICFIGHT";
 		final LocalFile goWS = LocalFileSystem.newFile(goWorkspacePath);
 
-		final File dcrd_project = goWS.child("src").child("github.com").child("decred").child("dcrd");
+		final File dcrd_project = goWS.child("src").child("github.com").child("decred").child("dcrdata");
 		dcrd_project.checkExists();
 
-		final File pfcd_project = goWS.child("src").child("github.com").child("picfight").child("pfcd");
+		final File pfcd_project = goWS.child("src").child("github.com").child("picfight").child("pfcdata");
 		pfcd_project.checkExists();
 
 		clearProject(pfcd_project);
