@@ -1,7 +1,93 @@
 
 package org.picfight.dcr.code.process;
 
-public class DecredReplacer {
+import java.io.IOException;
+
+import com.jfixby.scarabei.api.file.File;
+import com.jfixby.scarabei.api.java.ByteArray;
+import com.jfixby.scarabei.api.log.L;
+
+public class FileProcessor {
+
+	public static void processFile (final File i, final File o) throws IOException {
+		if (i.isFolder()) {
+			o.makeFolder();
+			return;
+		}
+
+		if (isTextFile(i)) {
+			String data = i.readToString();
+
+			data = FileProcessor.replace(data);
+
+			o.writeString(data);
+		} else {
+			final ByteArray data = i.readBytes();
+			o.writeBytes(data);
+		}
+	}
+
+	public static boolean isTextFile (final File i) {
+		if (i.extensionIs("png")) {
+			return false;
+		}
+		if (i.extensionIs("jpg")) {
+			return false;
+		}
+		if (i.extensionIs("jpeg")) {
+			return false;
+		}
+		if (i.extensionIs("json")) {
+			return true;
+		}
+		if (i.extensionIs("go")) {
+			return true;
+		}
+		if (i.extensionIs("tmpl")) {
+			return true;
+		}
+		if (i.extensionIs("js")) {
+			return true;
+		}
+		if (i.extensionIs("sh")) {
+			return true;
+		}
+		if (i.extensionIs("css")) {
+			return true;
+		}
+		if (i.extensionIs("lock")) {
+			return true;
+		}
+		if (i.extensionIs("toml")) {
+			return true;
+		}
+		if (i.extensionIs("md")) {
+			return true;
+		}
+		if (i.extensionIs("xml")) {
+			return true;
+		}
+		if (i.extensionIs("exe")) {
+			return false;
+		}
+		if (i.extensionIs("svg")) {
+			return false;
+		}
+		if (i.extensionIs("ico")) {
+			return false;
+		}
+		if (i.extensionIs("bin")) {
+			return false;
+		}
+		if (i.extensionIs("bin")) {
+			return false;
+		}
+		if (i.extensionIs("db")) {
+			return false;
+		}
+		L.e("unknown file type", i.getExtension());
+		return true;
+	}
 
 	public static String replace (String data) {
 		data = data.replaceAll("DCR", "PFC");

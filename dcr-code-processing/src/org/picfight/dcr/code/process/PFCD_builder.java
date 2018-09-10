@@ -45,23 +45,10 @@ public class PFCD_builder {
 			final File outputPath = pfcd_project.proceed(modPath);
 			L.d(">>>", f);
 			L.d("   ", outputPath);
-			processFile(f, outputPath);
+			FileProcessor.processFile(f, outputPath);
 // f.getAbsoluteFilePath().getRelativePath().splitAt(inputPrefix)
 		}
 
-	}
-
-	private static void processFile (final File i, final File o) throws IOException {
-		if (i.isFolder()) {
-			o.makeFolder();
-			return;
-		}
-
-		String data = i.readToString();
-
-		data = DecredReplacer.replace(data);
-
-		o.writeString(data);
 	}
 
 	private static List<File> listProjectFiles (final File project) throws IOException {
